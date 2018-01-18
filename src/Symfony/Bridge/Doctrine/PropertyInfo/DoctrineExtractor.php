@@ -95,8 +95,18 @@ class DoctrineExtractor implements PropertyListExtractorInterface, PropertyTypeE
 
                 if (isset($associationMapping['indexBy'])) {
                     $indexProperty = $associationMapping['indexBy'];
+                    /** @var ClassMetadataInfo $subMetadata */
                     $subMetadata = $this->classMetadataFactory->getMetadataFor($associationMapping['targetEntity']);
                     $typeOfField = $subMetadata->getTypeOfField($indexProperty);
+
+                    if ($typeOfField === null) {
+                        foreach ($subMetadata->getAssociationMappings() as $associationMapping) {
+                            if (isset($associationMapping['joinColumnFieldNames'][$indexProperty])) {
+                                $typeOfField = DBALType::INTEGER;
+                                break;
+                            }
+                        }
+                    }
 
                     $collectionKeyType = $this->getPhpType($typeOfField);
                 }
