@@ -120,6 +120,11 @@ abstract class AnnotationLoaderTest extends TestCase
         $this->assertLoadedContexts($this->getNamespace().'\ContextDummy', $this->getNamespace().'\ContextDummyParent');
     }
 
+    public function testLoadContextsPropertiesPromoted()
+    {
+        $this->assertLoadedContexts($this->getNamespace().'\ContextDummyPromotedProperties', $this->getNamespace().'\ContextDummyParent');
+    }
+
     public function testThrowsOnContextOnInvalidMethod()
     {
         $class = $this->getNamespace().'\BadMethodContextDummy';

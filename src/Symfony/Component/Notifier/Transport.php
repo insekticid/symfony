@@ -14,6 +14,7 @@ namespace Symfony\Component\Notifier;
 use Symfony\Component\Notifier\Bridge\AllMySms\AllMySmsTransportFactory;
 use Symfony\Component\Notifier\Bridge\AmazonSns\AmazonSnsTransportFactory;
 use Symfony\Component\Notifier\Bridge\Clickatell\ClickatellTransportFactory;
+use Symfony\Component\Notifier\Bridge\ContactEveryone\ContactEveryoneTransportFactory;
 use Symfony\Component\Notifier\Bridge\Discord\DiscordTransportFactory;
 use Symfony\Component\Notifier\Bridge\Engagespot\EngagespotTransportFactory;
 use Symfony\Component\Notifier\Bridge\Esendex\EsendexTransportFactory;
@@ -44,6 +45,7 @@ use Symfony\Component\Notifier\Bridge\Sms77\Sms77TransportFactory;
 use Symfony\Component\Notifier\Bridge\Smsapi\SmsapiTransportFactory;
 use Symfony\Component\Notifier\Bridge\SmsBiuras\SmsBiurasTransportFactory;
 use Symfony\Component\Notifier\Bridge\Smsc\SmscTransportFactory;
+use Symfony\Component\Notifier\Bridge\SmsFactor\SmsFactorTransportFactory;
 use Symfony\Component\Notifier\Bridge\Telegram\TelegramTransportFactory;
 use Symfony\Component\Notifier\Bridge\Telnyx\TelnyxTransportFactory;
 use Symfony\Component\Notifier\Bridge\TurboSms\TurboSmsTransportFactory;
@@ -71,6 +73,7 @@ final class Transport
         AllMySmsTransportFactory::class,
         AmazonSnsTransportFactory::class,
         ClickatellTransportFactory::class,
+        ContactEveryoneTransportFactory::class,
         DiscordTransportFactory::class,
         EngagespotTransportFactory::class,
         EsendexTransportFactory::class,
@@ -101,6 +104,7 @@ final class Transport
         SmsapiTransportFactory::class,
         SmsBiurasTransportFactory::class,
         SmscTransportFactory::class,
+        SmsFactorTransportFactory::class,
         TelegramTransportFactory::class,
         TelnyxTransportFactory::class,
         TurboSmsTransportFactory::class,
